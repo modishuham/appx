@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">AppX</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+    <string name="passworld_help">Password must be at least 8 characters</string>
+    <string name="appx">AppX</string>
+    <string name="signup">Signup</string>
+    <string name="email">Email</string>
+    <string name="mobile">Mobile</string>
+    <string name="logout">Logout</string>
+    <string name="home">Home</string>
+    <string name="order">Order</string>
+    <string name="chat">Chats</string>
+    <string name="not_a_user_please_sign_up_here"><b>Not A User? Please Sign UP Here.</b></string>
+    <string name="recentChat">Recent Chats</string>
+    <string name="users">Users</string>
+    <string name="facebook_app_id">817966558687442</string>
+    <string name="fb_login_protocol_scheme">fb817966558687442</string>
+    <string name="or">OR</string>
+    <string name="error_email">Email address is not valid</string>
+    <string name="error_username">Username can not be empty</string>
+    <string name="error_password">Password can not be empty or contains space</string>
+    <string name="error_mobile">Mobile number can not be empty or contains space</string>
+
+</resources>

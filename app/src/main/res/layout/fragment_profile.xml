@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_username_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:maxLines="1"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/app_text_size"
+        app:layout_constraintStart_toStartOf="@+id/circleImageView"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+        tools:text="Shubham Modi" />
+
+    <TextView
+        android:id="@+id/tv_email_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/colorWhite"
+        android:maxLines="1"
+        android:textSize="@dimen/app_text_size"
+        app:layout_constraintStart_toStartOf="@+id/tv_mobile_account"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mobile_account"
+        tools:text="Shubham.modi@tothenew.com" />
+
+    <TextView
+        android:id="@+id/tv_mobile_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:maxLines="1"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/app_text_size"
+        app:layout_constraintStart_toStartOf="@+id/tv_username_account"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username_account"
+        tools:text="8765383912" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_account" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_camera"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_edit"
+        app:layout_constraintStart_toEndOf="@+id/iv_edit"
+        app:layout_constraintTop_toTopOf="@+id/iv_edit" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/buttonStyle"
+        android:id="@+id/btn_logout"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/logout"
+        android:backgroundTint="@color/colorRed"
+        android:layout_marginTop="200dp"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_account" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".9" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
