@@ -3,13 +3,18 @@ package com.m.appx.ui.walkthrough
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.m.appx.R
 
 class WalkThroughAdapter : RecyclerView.Adapter<WalkThroughAdapter.WalkThroughViewHolder>() {
 
-    var data = arrayListOf<String>("a", "b", "c")
+    var data = arrayListOf(
+        R.drawable.ic_walkthrough_profile,
+        R.drawable.ic_walkthrough_search,
+        R.drawable.ic_walkthrough_find,
+        R.drawable.ic_walkthrough_chat
+    )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WalkThroughViewHolder {
         return WalkThroughViewHolder(
@@ -26,11 +31,10 @@ class WalkThroughAdapter : RecyclerView.Adapter<WalkThroughAdapter.WalkThroughVi
     }
 
     override fun onBindViewHolder(holder: WalkThroughViewHolder, position: Int) {
-        holder.data.text = data[position]
-
+        holder.image.setBackgroundResource(data[position])
     }
 
     class WalkThroughViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var data = itemView.findViewById<TextView>(R.id.tv_walk_through)
+        var image: ImageView = itemView.findViewById(R.id.iv_walk_through)
     }
 }

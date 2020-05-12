@@ -12,9 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.walkthrough.WalkThroughActivity">
-
-        </activity>
+        <activity android:name=".ui.walkthrough.WalkThroughActivity"/>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

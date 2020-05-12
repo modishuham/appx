@@ -59,12 +59,6 @@ class LoginFragment : Fragment(), View.OnClickListener {
             .build()
         mGoogleSignInClient = GoogleSignIn.getClient(context!!, gso)
         mAuth = FirebaseAuth.getInstance()
-
-        if (mAuth.currentUser != null) {
-            startActivity(Intent(context, MainActivity::class.java))
-            activity!!.finish()
-        }
-
         tv_go_signup.setOnClickListener(this)
         btn_login.setOnClickListener(this)
         btn_google_login.setOnClickListener(this)
@@ -79,6 +73,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
     private fun handleObserver() {
         emailPasswordAuthentication.loginSuccess.observe(viewLifecycleOwner, Observer {
             startActivity(Intent(context, MainActivity::class.java))
+            activity!!.finish()
         })
         emailPasswordAuthentication.loginFail.observe(viewLifecycleOwner, Observer {
             AppUtils.showToast(it)
@@ -98,6 +93,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
                 if (task.isSuccessful) {
                     val user = mAuth.currentUser
                     startActivity(Intent(context, MainActivity::class.java))
+                    activity!!.finish()
                 }
             }
     }
@@ -159,6 +155,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
                         "" + user?.displayName + " " + user?.email + " " + user?.phoneNumber + " " + user?.photoUrl
                     )
                     startActivity(Intent(context, MainActivity::class.java))
+                    activity!!.finish()
                 } else {
 
                 }

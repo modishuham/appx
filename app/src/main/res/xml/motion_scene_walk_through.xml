@@ -1,49 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:motion="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Transition
-        app:constraintSetStart="@id/start"
-        app:constraintSetEnd="@id/end">
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start">
 
         <KeyFrameSet>
-            <KeyAttribute>
-            </KeyAttribute>
+            <KeyAttribute
+                android:translationY="70dp"
+                app:framePosition="0"
+                app:motionTarget="@id/tv_skip" />
+
+            <KeyAttribute
+                android:translationY="0dp"
+                app:framePosition="25"
+                app:motionTarget="@id/tv_skip" />
+
+            <KeyAttribute
+                android:translationY="0dp"
+                app:framePosition="75"
+                app:motionTarget="@id/tv_skip" />
+
+            <KeyAttribute
+                android:translationY="70dp"
+                app:framePosition="100"
+                app:motionTarget="@id/tv_skip" />
+
+            <KeyAttribute
+                android:translationY="0dp"
+                app:framePosition="75"
+                app:motionTarget="@id/tv_next" />
+
+            <KeyAttribute
+                android:translationY="70dp"
+                app:framePosition="100"
+                app:motionTarget="@id/tv_next" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="75"
+                app:motionTarget="@id/tv_start" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="100"
+                app:motionTarget="@id/tv_start" />
+
         </KeyFrameSet>
     </Transition>
 
 
     <ConstraintSet android:id="@+id/start">
-        <Constraint android:id="@id/ml"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent">
-        </Constraint>
-        <Constraint android:id="@id/tv_name"
-            android:layout_height="wrap_content"
+        <Constraint
+            android:id="@id/ml"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <Constraint
+            android:id="@id/tv_next"
             android:layout_width="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            >
+            app:layout_constraintEnd_toEndOf="parent">
             <CustomAttribute
-                motion:attributeName="textSize"
-                motion:customDimension="16sp" />
+                app:attributeName="textSize"
+                app:customFloatValue="16" />
+        </Constraint>
+        <Constraint
+            android:id="@id/tv_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute
+                app:attributeName="textSize"
+                app:customFloatValue="16" />
+        </Constraint>
+        <Constraint
+            android:id="@id/tv_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:alpha="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute
+                app:attributeName="textSize"
+                app:customFloatValue="22" />
         </Constraint>
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
-        <Constraint android:id="@id/ml"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent">
-        </Constraint>
-        <Constraint android:id="@id/tv_name"
-            android:layout_height="wrap_content"
+        <Constraint
+            android:id="@id/ml"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <Constraint
+            android:id="@id/tv_next"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
             <CustomAttribute
-                motion:attributeName="textSize"
-                motion:customDimension="16sp" />
+                app:attributeName="textSize"
+                app:customFloatValue="16" />
+        </Constraint>
+        <Constraint
+            android:id="@id/tv_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:alpha="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute
+                app:attributeName="textSize"
+                app:customFloatValue="16" />
+        </Constraint>
+        <Constraint
+            android:id="@id/tv_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute
+                app:attributeName="textSize"
+                app:customFloatValue="22" />
         </Constraint>
     </ConstraintSet>
 
