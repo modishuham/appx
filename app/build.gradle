@@ -86,5 +86,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
     //Page Indicator
     implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+    //Card View
+    implementation "androidx.cardview:cardview:1.0.0"
 
 }

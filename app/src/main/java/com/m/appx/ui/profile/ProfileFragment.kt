@@ -26,5 +26,11 @@ class ProfileFragment : BaseFragment() {
             FirebaseAuth.getInstance().signOut()
         }
 
+        FirebaseAuth.getInstance().currentUser?.let {
+            tv_username_account.text = it.displayName
+            tv_mobile_account.text = it.phoneNumber
+            tv_email_account.text = it.email
+        }
+
     }
 }
