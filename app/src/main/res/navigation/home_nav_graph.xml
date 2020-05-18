@@ -15,5 +15,13 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.m.appx.ui.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_serviceProfileFragment"
+            app:destination="@id/serviceProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/serviceProfileFragment"
+        android:name="com.m.appx.ui.serviceProfile.ServiceProfileFragment"
+        android:label="ServiceProfileFragment" />
 </navigation>

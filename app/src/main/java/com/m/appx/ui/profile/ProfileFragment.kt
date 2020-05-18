@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.m.appx.R
 import com.m.appx.base.BaseFragment
@@ -30,6 +31,10 @@ class ProfileFragment : BaseFragment() {
             tv_username_account.text = it.displayName
             tv_mobile_account.text = it.phoneNumber
             tv_email_account.text = it.email
+        }
+
+        btn_goto_service_profile.setOnClickListener {
+            findNavController().navigate(R.id.action_profileFragment_to_serviceProfileFragment)
         }
 
     }

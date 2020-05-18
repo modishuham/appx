@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/colorPrimary">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView"
@@ -33,8 +33,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto"
-        android:textColor="@color/colorWhite"
         android:maxLines="1"
+        android:textColor="@color/colorWhite"
         android:textSize="@dimen/app_text_size"
         app:layout_constraintStart_toStartOf="@+id/tv_mobile_account"
         app:layout_constraintTop_toBottomOf="@+id/tv_mobile_account"
@@ -56,8 +56,8 @@
         android:id="@+id/iv_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_edit"
         android:layout_margin="10dp"
+        android:src="@drawable/ic_edit"
         app:layout_constraintStart_toStartOf="@+id/gl_start"
         app:layout_constraintTop_toBottomOf="@+id/tv_email_account" />
 
@@ -65,24 +65,37 @@
         android:id="@+id/iv_camera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_camera"
         android:layout_margin="10dp"
+        android:src="@drawable/ic_camera"
         app:layout_constraintBottom_toBottomOf="@+id/iv_edit"
         app:layout_constraintStart_toEndOf="@+id/iv_edit"
         app:layout_constraintTop_toTopOf="@+id/iv_edit" />
 
     <com.google.android.material.button.MaterialButton
-        style="@style/buttonStyle"
         android:id="@+id/btn_logout"
+        style="@style/buttonStyle"
         android:layout_width="@dimen/button_width"
         android:layout_height="@dimen/button_height"
-        android:text="@string/logout"
-        android:backgroundTint="@color/colorRed"
         android:layout_marginTop="200dp"
+        android:backgroundTint="@color/colorRed"
+        android:text="@string/logout"
         android:textSize="@dimen/button_text_size"
         app:layout_constraintEnd_toStartOf="@+id/gl_end"
         app:layout_constraintStart_toStartOf="@+id/gl_start"
         app:layout_constraintTop_toBottomOf="@+id/tv_email_account" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_goto_service_profile"
+        style="@style/buttonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/colorButtonBackground"
+        android:text="Create Servive Profile"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/btn_logout" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_start"

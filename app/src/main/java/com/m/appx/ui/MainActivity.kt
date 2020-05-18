@@ -1,13 +1,16 @@
 package com.m.appx.ui
 
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.m.appx.R
 import com.m.appx.base.BaseActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
 
@@ -41,6 +44,12 @@ class MainActivity : BaseActivity() {
 
         // Whenever the selected controller changes, setup the action bar.
         controller.observe(this, Observer { navController ->
+            navController.addOnDestinationChangedListener { controller, destination, arguments ->
+                if (controller.currentDestination?.id == R.id.serviceProfileFragment)
+                    bottom_nav.visibility = View.GONE
+                else
+                    bottom_nav.visibility = View.VISIBLE
+            }
         })
         currentNavController = controller
     }
