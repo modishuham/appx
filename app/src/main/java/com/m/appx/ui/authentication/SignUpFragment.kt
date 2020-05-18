@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.auth.FirebaseAuth
 import com.m.appx.R
 import com.m.appx.utils.AppUtils
 import kotlinx.android.synthetic.main.fragment_signup.*
@@ -15,7 +15,6 @@ class SignUpFragment : Fragment() {
 
     private var isAllFieldsValid: Boolean = true
     private var emailPasswordAuthentication = EmailPasswordAuthentication()
-    private var mDatabase = FirebaseDatabase.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,8 +45,7 @@ class SignUpFragment : Fragment() {
     private fun handelObserver() {
         emailPasswordAuthentication.loginSuccess.observe(viewLifecycleOwner, Observer {
             AppUtils.showToast(it)
-            //val user = User("shubham", "aa", "saasa")
-            //mDatabase.getReference("users").setValue(user)
+            FirebaseAuth.getInstance().signOut()
         })
         emailPasswordAuthentication.loginFail.observe(viewLifecycleOwner, Observer {
             AppUtils.showToast(it)

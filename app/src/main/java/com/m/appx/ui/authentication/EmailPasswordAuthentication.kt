@@ -13,11 +13,8 @@ class EmailPasswordAuthentication {
     fun createUser(user: User) {
         mAuth.createUserWithEmailAndPassword(user.email!!, user.password!!).addOnCompleteListener {
             if (it.isSuccessful) {
-                val isStored = FirebaseDatabaseStorage.saveSignUpData(user)
-                if (isStored)
-                    loginSuccess.value = "success"
-                else
-                    loginFail.value = "Something went wrong"
+                FirebaseDatabaseStorage.saveSignUpData(user)
+                loginSuccess.value = "Done"
             } else {
                 loginFail.value = it.exception?.message
             }
